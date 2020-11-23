@@ -1,0 +1,15 @@
+version: "3"
+
+#containers are known as services
+services:
+  #mymongo is the container is filled up with the mongo apllication or image
+  mymongo:
+    image: "mongo"
+
+  #here build is my cutsom build image
+  mynode:
+    build: .
+    #. means in the same directory
+    ports:
+      - "8000:8000"
+      #first 8000 is my system port and 8000 is conatiner port
